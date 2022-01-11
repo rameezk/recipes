@@ -20,13 +20,15 @@
         html-content   (map markdown/md-to-html-string (vals md-files))]
     (zipmap paths html-content)))
 
-(statis/empty-directory! publish-dir)
-(statis/export-pages (read-and-convert!) publish-dir)
+(defn publish!
+  "Publish markdown recipes to html"
+  []
+  (statis/empty-directory! publish-dir)
+  (statis/export-pages (read-and-convert!) publish-dir))
 
-(comment
-  (read-and-convert!)
-
-  )
+(defn -main
+  []
+  (publish!))
 
 
 
