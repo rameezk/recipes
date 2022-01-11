@@ -1,1 +1,2 @@
-{:deps {org.clojure/clojure {:mvn/version "1.10.3"}}}
+{:deps {org.clojure/clojure {:mvn/version "1.10.3"}
+        stasis/stasis {:mvn/version "2.5.1"}}}
