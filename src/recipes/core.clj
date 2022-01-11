@@ -24,7 +24,9 @@
 (statis/export-pages (read-and-convert!) publish-dir)
 
 (comment
-  (read-and-convert!))
+  (read-and-convert!)
+
+  )
 
 
 
