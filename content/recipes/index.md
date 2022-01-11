@@ -1,2 +1,2 @@
 # Recipes
-- [Neapolitan Pizza](./neapolitan-pizza.md)
+- [Neapolitan Pizza](./neapolitan-pizza)
