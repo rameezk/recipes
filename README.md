@@ -1,3 +1,3 @@
 # RECIPES
 
-> Some recipes I've collected over the years
+> Some [recipes](https://recipes.rameezkhan.dev/) I've collected over the years
