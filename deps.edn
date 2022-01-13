@@ -1,6 +1,7 @@
 {:deps {org.clojure/clojure {:mvn/version "1.10.3"}
         stasis/stasis {:mvn/version "2.5.0"}
-        markdown-clj/markdown-clj {:mvn/version "1.10.7"}}
+        markdown-clj/markdown-clj {:mvn/version "1.10.7"}
+        hiccup/hiccup {:mvn/version "1.0.5"}}
  :aliases
  {:build
   {:main-opts ["-m" "recipes.core"]}}}
