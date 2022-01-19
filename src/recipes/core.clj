@@ -39,24 +39,32 @@
                          (map #(first (get-in % [:metadata :title]))))]
     (zipmap hrefs href-texts)))
 
+(defn wrap-with-styles
+  "Wrap html content in proper style sheet"
+  [html-content]
+  (let [header (html [:head
+                      [:link
+                       {:rel "stylesheet"
+                        :href "https://cdn.simplecss.org/simple.min.css"}]])]
+    (str header html-content)))
+
 (defn build-index-page
   "Build index page from links"
   [links]
   {"/index.html"
-   (html
-    [:head
-     [:title "Recipes"]]
-    [:div.section
-     [:h1.title "Recipes"]
-     [:ul
-      (map (fn [[link text]]
-             [:li [:a {:href link} text]]) links)]])})
+   (wrap-with-styles
+    (html
+     [:div
+      [:h1 "Recipes"]
+      [:ul
+       (map (fn [[link text]]
+              [:li [:a {:href link} text]]) links)]]))})
 
 (defn build-html-pages
   "Build html pages from parsed data"
   [parsed-content]
   (reduce-kv (fn [m k v]
-               (assoc m k (:html v))) {} parsed-content))
+               (assoc m k (wrap-with-styles (:html v)))) {} parsed-content))
 
 (defn md->html!
   "Convert Markdown in a specified `dir` to html"
@@ -79,3 +87,4 @@
 (defn -main
   []
   (publish!))
+
